@@ -13,6 +13,15 @@ def quick_sort(arr):
 
     return arr
 
+def choice(arr):
+    print("Enter the sort you want to perform: ")
+    print("1.Insertion Sort\n2.Quick Sort")
+    c = int(input("Enter you choice: "))
 
-MyList = list(map(int,input("\nEnter the List : ").strip().split()))
-print(insertion_sort(MyList))
+    if c == 1:
+        return insertion_sort(arr)
+    if c == 2:
+        quick_sort(arr)
+
+MyList = list(map(int,input("\nEnter the Numbers : ").strip().split()))
+print(choice(MyList))
