@@ -14,5 +14,5 @@ def quick_sort(arr):
     return arr
 
 
-MyList = [5, 3, 7, 4, 2, 9, 0, 8, 6, 1]
+MyList = list(map(int,input("\nEnter the List : ").strip().split()))
 print(insertion_sort(MyList))
