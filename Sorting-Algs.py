@@ -4,14 +4,19 @@ def choice(arr):
     print("1.Insertion Sort")
     print("2.Quick Sort")
     print("3.Selection Sort")
-    c = int(input("Enter you choice: "))
+    print("4.Bubble Sort")
+    c = int(input("Enter your choice: "))
 
     if c == 1:
         return insertion_sort(arr)
-    if c == 2:
+    elif c == 2:
         return quick_sort(arr, 0, n-1)
-    if c == 3:
+    elif c == 3:
         return selection_sort(arr)
+    elif c == 4:
+        return bubble_sort(arr)
+    else:
+        print("Invalid Choice!!")
 
 # Insertion Sort
 def insertion_sort(arr):
@@ -60,6 +65,16 @@ def selection_sort(arr):
                 min = y
         arr[x], arr[min] = arr[min], arr[x]
     return arr
+
+# Bubble Sort
+def bubble_sort(arr): 
+    for x in range(len(arr)): 
+        for y in range(0, len(arr)-x-1): 
+            if arr[y] > arr[y+1] : 
+                arr[y], arr[y+1] = arr[y+1], arr[y]
+    return arr
+
+
 
 # Inputing the List/Array
 MyList = list(map(int,input("\nEnter the Numbers : ").strip().split()))
