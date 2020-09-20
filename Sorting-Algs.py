@@ -1,5 +1,5 @@
 # Choosing the Sorting Algorithm
-def choice(arr):
+def choice():
     print("Enter the sort you want to perform: ")
     print("1.Insertion Sort")
     print("2.Quick Sort")
@@ -8,13 +8,13 @@ def choice(arr):
     c = int(input("Enter your choice: "))
 
     if c == 1:
-        return insertion_sort(arr)
+        return insertion_sort(MyList)
     elif c == 2:
-        return quick_sort(arr, 0, n-1)
+        return quick_sort(MyList, 0, n-1)
     elif c == 3:
-        return selection_sort(arr)
+        return selection_sort(MyList)
     elif c == 4:
-        return bubble_sort(arr)
+        return bubble_sort(MyList)
     else:
         print("Invalid Choice!!")
 
@@ -68,6 +68,7 @@ def selection_sort(arr):
 
 # Bubble Sort
 def bubble_sort(arr): 
+
     for x in range(len(arr)): 
         for y in range(0, len(arr)-x-1): 
             if arr[y] > arr[y+1] : 
@@ -81,7 +82,7 @@ MyList = list(map(int,input("\nEnter the Numbers : ").strip().split()))
 
 n = len(MyList)
 
-SortedList = choice(MyList)
+SortedList = choice()
 
 # Printing the Sorted List/Array
 for x in SortedList:
