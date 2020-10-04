@@ -9,3 +9,6 @@ def choice():
 
 def linearsearch():
     pass
+
+def binarysearch():
+    pass
