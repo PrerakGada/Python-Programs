@@ -12,3 +12,7 @@ def linearsearch():
 
 def binarysearch():
     pass
+
+MyList = list(map(int,input("\nEnter the Numbers : ").strip().split()))
+
+num = int(input("Enter the Number you want to Search: "))
