@@ -13,10 +13,13 @@ def choice(arr, x):
         choice(arr, x)
 
 def linearsearch(arr, x):
-
+    o = 0
     for i in range(len(arr)):
         if arr[i] == x:
-            print("{0} is Found on {1} Location",format(x,i))
+            print("{0} is Found on {1} Location".format(x,i))
+            o += 1
+    if o == 0:
+        print("{0} is not Found in the List!".format(x))
 
 def binarysearch(arr, x):
     arr.sort()
