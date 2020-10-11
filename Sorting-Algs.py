@@ -107,8 +107,8 @@ def merge_sort(arr):
           
         while j < len(right): 
             arr[k] = right[j] 
-            j+= 1
-            k+= 1
+            j += 1
+            k += 1
 
     return arr
 
