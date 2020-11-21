@@ -12,6 +12,8 @@ def choice(arr, x):
         print("Wrong Choice!")
         choice(arr, x)
 
+t = ""
+y = t.reverse()
 
 def linearsearch(arr, x):
     o = 0
