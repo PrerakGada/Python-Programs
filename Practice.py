@@ -18,4 +18,4 @@ c2.update()
 print(c2.name)
 print(c2.age)
 
-print('This is my new macbook air🥰')
+print('This is my new macbook air')
