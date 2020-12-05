@@ -17,5 +17,3 @@ print(c1.age)
 c2.update()
 print(c2.name)
 print(c2.age)
-
-print('Hello World!!')
