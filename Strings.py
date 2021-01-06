@@ -14,5 +14,3 @@ print(full_name)
 print(full_name)
 print(full_name)
 print(full_name)
-print(full_name)
-
