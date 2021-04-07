@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Python-Programs.iml" filepath="$PROJECT_DIR$/.idea/Python-Programs.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/src0/.idea/src0.iml" filepath="$USER_HOME$/Downloads/src0/.idea/src0.iml" />
+      <module fileurl="file://$USER_HOME$/Prerak/CS50/Introduction to Artificial Intelligence/tictactoe/.idea/tictactoe.iml" filepath="$USER_HOME$/Prerak/CS50/Introduction to Artificial Intelligence/tictactoe/.idea/tictactoe.iml" />
     </modules>
   </component>
 </project>
