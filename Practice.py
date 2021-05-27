@@ -1,19 +1,6 @@
-class Computer:
-
-    def __init__(self):
-        self.name = 'Prerak'
-        self.age = 17
-
-    def update(self):
-        self.name = 'Ghost'
-        self.age = 18
+m1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+m2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 
-c1 = Computer()
-c2 = Computer()
+for x, y in m1, m2:
 
-print(c1.name)
-print(c1.age)
-c2.update()
-print(c2.name)
-print(c2.age)
