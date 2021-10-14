@@ -8,5 +8,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Python Course" />
     <orderEntry type="module" module-name="Python-Games" />
+    <orderEntry type="module" module-name="src0" />
   </component>
 </module>

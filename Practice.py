@@ -1,46 +1,31 @@
-# sum of first 10 numbers
-#
-# odd even
-#
-# find largest number in a list
-#
-# largest of 3 numbers by taking variables
-#
-# processor name and system name using python
-#
-# sorting in a list
-#
-# square root of a number
-#
-# sum of elements in a list
-#
-# groupby
-#
-# primary key
-#
-# Dense Layer
+english = float(input(" Please enter English Marks: "))
+math = float(input(" Please enter Math Marks: "))
+computers = float(input(" Please enter Computer Marks: "))
+physics = float(input(" Please enter Physics Marks: "))
+chemistry = float(input(" Please enter Chemistry Marks: "))
 
-import platform
-import math
+total = english + math + computers + physics + chemistry
+percentage = (total / 500) * 100
+
+print("Total Marks = %.2f" % total)
+print("Marks Percentage = %.2f" % percentage)
+p = percentage // 10
 
 
-def sumof(n):
-    return n(n + 1) / 2
+def switchp(p):
+  switcher = {
+    1: 'Student has failed',
+    2: 'Student has failed',
+    3: 'Student has failed',
+    4: 'Student has Passed',
+    5: 'Student has passed Second class',
+    6: 'Student has passed Higher Second Class',
+    7: 'Student has passed First Class',
+    8: 'Student has passed Distinction',
+    9: 'Student has passed Distinction',
+  }
+  return switcher.get(p, "Invalid Percentage")
 
-    def __init__(self):
-        self.name = 'Prerak'
-        self.age = 17
 
-    def update(self):
-        self.name = 'Ghost'
-        self.age = 18
-
-
-c1 = Computer()
-c2 = Computer()
-
-print(c1.name)
-print(c1.age)
-c2.update()
-print(c2.name)
-print(c2.age)
+res = switchp(p)
+print(res)
