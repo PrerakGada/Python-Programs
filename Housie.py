@@ -1,126 +1,45 @@
 import random
-import numpy as np
-from tabulate import tabulate
-from colorama import Fore
 
 
-def getTickets():
-  ticket_list = np.zeros((3, 9), dtype=int)
-  total_numbers = [num for num in range(1, 90)]
-  total_indices = [(i, j) for i in range(3) for j in range(9)]
-  random_indices = []
+def bingo():
+  n = int(input("How many tickets do you need: "))
+  print('\n\nNote: "OO" signifies Empty Space\n\n')
+  for n1 in range(n):
+    tkt = [[' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO '],
+           [' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO '],
+           [' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO ', ' OO ']]
 
-  first_row = random.sample(total_indices[:9], 5)
-  second_row = random.sample(total_indices[9:18], 5)
-  third_row = random.sample(total_indices[-9:], 5)
+    d = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
 
-  for i in first_row:
-    random_indices.append(i)
+    l = []
+    while 1 < 2:
+      a = random.randint(1, 89)
 
-  for i in second_row:
-    random_indices.append(i)
+      if a not in l:
+        if d[int(a / 10)] < 3:
+          l.append(a)
+          d[int(a / 10)] += 1
+          if len(l) == 15:
+            break
 
-  for i in third_row:
-    random_indices.append(i)
+    for x in l:
+      x1 = int(x / 10)
+      if int(x / 10) == 0:
+        x2 = str(f' 0{str(x)} ')
+      else:
+        x2 = str(f' {str(x)} ')
+      while 1 < 2:
+        a = random.randint(0, 2)
+        if tkt[a][x1] == ' OO ':
+          tkt[a][x1] = x2
+          break
 
-  for num in random_indices:
-    if num[1] == 0:
-      number = random.choice(total_numbers[:10])
-      ticket_list[num] = number
-      total_numbers[total_numbers.index(number)] = 0
-    elif num[1] == 1:
-      number = random.choice(total_numbers[10:20])
-      ticket_list[num] = number
-      total_numbers[total_numbers.index(number)] = 0
-    elif num[1] == 2:
-      number = random.choice(total_numbers[20:30])
-      ticket_list[num] = number
-      total_numbers[total_numbers.index(number)] = 0
-    elif num[1] == 3:
-      number = random.choice(total_numbers[30:40])
-      ticket_list[num] = number
-      total_numbers[total_numbers.index(number)] = 0
-    elif num[1] == 4:
-      number = random.choice(total_numbers[40:50])
-      ticket_list[num] = number
-      total_numbers[total_numbers.index(number)] = 0
-    elif num[1] == 5:
-      number = random.choice(total_numbers[50:60])
-      ticket_list[num] = number
-      total_numbers[total_numbers.index(number)] = 0
-    elif num[1] == 6:
-      number = random.choice(total_numbers[60:70])
-      ticket_list[num] = number
-      total_numbers[total_numbers.index(number)] = 0
-    elif num[1] == 7:
-      number = random.choice(total_numbers[70:80])
-      ticket_list[num] = number
-      total_numbers[total_numbers.index(number)] = 0
-    elif num[1] == 8:
-      number = random.choice(total_numbers[80:89])
-      ticket_list[num] = number
-      total_numbers[total_numbers.index(number)] = 0
+    print(f"Ticket No. {n1 + 1}\n")
+    for i in tkt:
+      print(*i)
+    print('\n\n\n')
 
-  for col in range(9):
-    if ticket_list[0][col] != 0 and ticket_list[1][col] != 0 and ticket_list[2][col] != 0:
-      for row in range(2):
-        if ticket_list[row][col] > ticket_list[row + 1][col]:
-          temp = ticket_list[row][col]
-          ticket_list[row][col] = ticket_list[row + 1][col]
-          ticket_list[row + 1][col] = temp
-
-    elif ticket_list[0][col] != 0 and ticket_list[1][col] != 0 and ticket_list[2][col] == 0:
-      if ticket_list[0][col] > ticket_list[1][col]:
-        temp = ticket_list[0][col]
-        ticket_list[0][col] = ticket_list[1][col]
-        ticket_list[1][col] = temp
-
-    elif ticket_list[0][col] != 0 and ticket_list[2][col] != 0 and ticket_list[1][col] == 0:
-      if ticket_list[0][col] > ticket_list[2][col]:
-        temp = ticket_list[0][col]
-        ticket_list[0][col] = ticket_list[2][col]
-        ticket_list[2][col] = temp
-
-    elif ticket_list[0][col] == 0 and ticket_list[1][col] != 0 and ticket_list[2][col] != 0:
-      if ticket_list[1][col] > ticket_list[2][col]:
-        temp = ticket_list[1][col]
-        ticket_list[1][col] = ticket_list[2][col]
-        ticket_list[2][col] = temp
-
-  return ticket_list
+  a = input('Press Enter to Quit')
 
 
-def getToken():
-  token = random.choice(tokens)
-  tokens.remove(token)
-  return token
-
-
-def checkTickets(t):
-  for ticket in tickets:
-    for row in range(3):
-      for col in range(9):
-        if str(ticket[row][col]) == str(t):
-          print(str(ticket[row][col]), end=' ')
-
-
-# Driver Code
-tokens = []
-for x in range(1, 90):
-  tokens.append(x)
-
-numberOfTickets = input('Enter the number of players: ')
-tickets = []
-for i in range(int(numberOfTickets)):
-  ticket = getTickets()
-  tickets.append(ticket)
-for ticket in tickets:
-  print(tabulate(ticket, tablefmt="fancy_grid", numalign="center"))
-  print(ticket)
-  # print()
-
-for x in range(89):
-  token = getToken()
-  checkTickets(token)
-  # for ticket in tickets:
-  #     print(tabulate(ticket, tablefmt="fancy_grid", numalign="center"))
+bingo()
