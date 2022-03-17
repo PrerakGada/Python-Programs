@@ -3,8 +3,8 @@ import random
 
 print("Let's see how fast can you name the font colors!!\n\n")
 
-colors = [Fore.GREEN, Fore.RED, Fore.BLUE, Fore.RESET]
-colornames = ['BLUE', 'WHITE', 'RED', 'GREEN']
+colors = [Fore.GREEN, Fore.RED, Fore.BLUE, Fore.RESET, Fore.YELLOW]
+colornames = ['BLUE', 'WHITE', 'RED', 'GREEN', 'YELLOW']
 
 for x in range(10):
     for y in range(8):
